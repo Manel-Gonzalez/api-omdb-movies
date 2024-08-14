@@ -29,10 +29,18 @@ function movieDetails() {
     <div className="flex flex-col items-center gap-8">
       <Home />
       {movieData && (
-            <div className='flex flex-col items-center gap-4'>
-                <img className="rounded-lg" src={movieData && movieData.Poster} alt={movieData && movieData.Title} />
-                <h2 className="text-xl font-bold text-teal-600">{movieData && movieData.Title}</h2>
-                <p>{movieData && movieData.Plot}</p>    
+            <div className='flex flex-col items-center gap-4 border-t-2'>
+                <h2 className="text-2xl font-bold text-teal-600 mt-8">{movieData && movieData.Title}</h2>
+                <div className="flex flex-col md:flex-row w-full ">
+                  <div className="md:w-3/5">
+                    <img className="rounded-lg w-full " src={movieData && movieData.Poster} alt={movieData && movieData.Title} />
+
+                  </div>
+                  <div className="mt-2 md:2/5 md:mt-0 md:ml-4">
+                   <p className="p-10">{movieData && movieData.Plot}</p>    
+
+                  </div>
+                </div>
             </div>
         )}
 
